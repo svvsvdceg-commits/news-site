@@ -5,13 +5,10 @@
 @section('content')
     <h1>Искусственный интеллект</h1>
 
-    <article class="news">
-        <h2>Искусственный интеллект помогает учиться</h2>
-        <p>Студенты используют искусственный интеллект для поиска информации и изучения новых тем.</p>
-    </article>
-
-    <article class="news">
-        <h2>Искусственный интеллект в медицине</h2>
-        <p>Новые программы помогают врачам анализировать снимки и находить признаки заболеваний.</p>
-    </article>
+    @foreach($news as $article)
+        <article class="news">
+            <h2>{{ $article->title }}</h2>
+            <p>{{ $article->content }}</p>
+        </article>
+    @endforeach
 @endsection
